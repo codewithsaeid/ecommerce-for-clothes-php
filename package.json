@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "This is a versity project",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadsaeid/ecommerce-for-clothes-php.git"
+  },
+  "keywords": [
+    "ecommerce"
+  ],
+  "author": "Saeid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammadsaeid/ecommerce-for-clothes-php/issues"
+  },
+  "homepage": "https://github.com/muhammadsaeid/ecommerce-for-clothes-php#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
