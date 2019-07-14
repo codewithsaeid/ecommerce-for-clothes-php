@@ -21,7 +21,7 @@ if (isset($_GET['result'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <style>
     body {
@@ -174,13 +174,14 @@ if (isset($_GET['result'])) {
             <!-- content area start -->
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-5">
            <div class="container">
-           <form action="../inc/addproduct.php" method="POST" enctype="multipart/form-data">
+           <form action="../inc/editproduct.php" method="POST" enctype="multipart/form-data">
+           <input type="hidden" name="userid" value="<?php echo $id = $_GET['epid']; ?>">
           <select id="inputState" class="form-control mb-3" name="pcategory">
             <option selected>Category...</option>
-            <option value="Man">Man</option>
-            <option value="Women">Women</option>
-            <option value="Kids">Kids</option>
-            <option value="Accessories">Accessories</option>
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+            <option value="kids">Kids</option>
+            <option value="accessories">Accessories</option>
           </select>
 
 
@@ -205,10 +206,10 @@ if (isset($_GET['result'])) {
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- For icons -->
-    <script src="../node_modules/feather-icons/dist/feather.min.js"></script>
+    <script src="../../node_modules/feather-icons/dist/feather.min.js"></script>
     <script>
         feather.replace()
     </script>

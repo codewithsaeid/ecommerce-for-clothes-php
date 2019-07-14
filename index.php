@@ -1,12 +1,3 @@
-<?php
-if(isset($_GET['result'])){
-  if($_GET['result'] == 'somethingwrong'){
-    echo '<div class="alert alert-danger">
-      <strong>Something Worng ! </strong> Email Or pass do not match.</div>';
-  }
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -19,24 +10,85 @@ if(isset($_GET['result'])){
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <style>
-body,html{height:100%}body{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;padding-top:40px;padding-bottom:40px;background-color:#f5f5f5}.form-signin{width:100%;max-width:330px;padding:15px;margin:auto;text-align:center}.form-signin .checkbox{font-weight:400}.form-signin .form-control{position:relative;box-sizing:border-box;height:auto;padding:10px;font-size:16px}.form-signin .form-control:focus{z-index:2}.form-signin input[type=email]{margin-bottom:10px;border-bottom-right-radius:0;border-bottom-left-radius:0}.form-signin input[type=password]{margin-bottom:10px;border-top-left-radius:0;border-top-right-radius:0}
+
 </style>
+
 <body>
-<form class="form-signin" action="./inc/adminsignup.php" method="POST">
-      <img class="mb-4" src="./images/ecom-store-logo.png" alt="">
-      <h1 class="h3 mb-3 font-weight-normal"><b>Please sign in</b></h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
-    </form>         
+    <!-- navbar -->
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="./admin/images/ecom-store-logo.png" alt=""></h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="#">HOME</a>
+            <a class="p-2 text-dark" href="#">SHOP</a>
+            <a class="p-2 text-dark" href="#">Support</a>
+            <a class="p-2 text-dark" href="#">Pricing</a>
+        </nav>
+        <a class="btn btn-outline-success mr-3" href="#">Sign in</a>
+        <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </div>
+    <!-- product area -->
+    <div class="container">
+    <h3 class="text-center">OUR LATEST COLLECTIONS</h3>
+        <div class="row justify-content-around">
+         
+
+            <?php include('./admin/inc/connection.php');
+            $product_data = mysqli_query($connect, "SELECT * FROM add_product");
+            while ($product_slice = mysqli_fetch_array($product_data)) : ?>
+
+                <div class="card m-3" style="width: 18rem;">
+                    <img class="card-img-top" src="./admin/images/product/<?php echo $product_slice['p_img']; ?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><?php echo $product_slice['p_name']; ?></h5>
+                        <h6 class="card-title text-center"><?php echo $product_slice['p_price']; ?> $</h6>
+                        <a href="#" class="btn btn-primary float-left">Add to Cart</a>
+                        <a href="#" class="btn btn-primary float-right">Viwe details</a>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+
+
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="pt-4 my-md-5 pt-md-5 border-top container">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./admin/images/ecom-store-logo.png" alt="">
+                <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Cool stuff</a></li>
+                    <li><a class="text-muted" href="#">Random feature</a></li>
+                    <li><a class="text-muted" href="#">Team feature</a></li>
+                    <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                    <li><a class="text-muted" href="#">Another one</a></li>
+                    <li><a class="text-muted" href="#">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Resource</a></li>
+                    <li><a class="text-muted" href="#">Resource name</a></li>
+                    <li><a class="text-muted" href="#">Another resource</a></li>
+                    <li><a class="text-muted" href="#">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Team</a></li>
+                    <li><a class="text-muted" href="#">Locations</a></li>
+                    <li><a class="text-muted" href="#">Privacy</a></li>
+                    <li><a class="text-muted" href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>

@@ -1,45 +1,45 @@
 <?php
 include '../inc/connection.php';
 // All User
-$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM add_product");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM products");
 while ($row = mysqli_fetch_array($result)) {
     $activeorders = $row['id'];
     // echo "There are currently " .$activeorders. " users.";
 }
 
 // Total Products done
-$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM add_product");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM products");
 while ($row = mysqli_fetch_array($result)) {
     $totalproduct = $row['id'];
     // echo "There are currently " .$totalproduct. " users.";
   
 }
 // Active orders
-$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM add_product");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM products");
 while ($row = mysqli_fetch_array($result)) {
     $activeorders = $row['id'];
     // "There are currently " .$activeorders. " users.";
 }
 // Mens Product done
-$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM add_product WHERE p_category='Man'");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM products WHERE p_category='Man'");
 while ($row = mysqli_fetch_array($result)) {
     $Mans = $row['p_category'];
     // echo "There are currently " .$Mans. " users.";
 }
 // WoMens Product done
-$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM add_product WHERE p_category='Accessories'");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM products WHERE p_category='Women'");
 while ($row = mysqli_fetch_array($result)) {
     $womens = $row['p_category'];
     // echo "There are currently " .$womens. " users.";
 }
 // Kids Product done
-$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM add_product WHERE p_category='Kids'");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM products WHERE p_category='Kids'");
 while ($row = mysqli_fetch_array($result)) {
     $kids = $row['p_category'];
     // echo "There are currently " .$kids. " users.";
 }
 // Accessories Product done
-$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM add_product WHERE p_category='Accessories'");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as p_category FROM products WHERE p_category='Accessories'");
 while ($row = mysqli_fetch_array($result)) {
     $accessories = $row['p_category'];
     // echo "There are currently " .$accessories. " users.";
@@ -56,7 +56,7 @@ while ($row = mysqli_fetch_array($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <style>
    body{font-size:.875rem}.feather{width:16px;height:16px;vertical-align:text-bottom}.sidebar{position:fixed;top:0;bottom:0;left:0;z-index:100;padding:30px 0 0;box-shadow:inset -1px 0 0 rgba(0,0,0,.1)}.sidebar-sticky{position:relative;top:0;height:100%;padding-top:.5rem;overflow-x:hidden;overflow-y:auto}@supports ((position:-webkit-sticky) or (position:sticky)){.sidebar-sticky{position:-webkit-sticky;position:sticky}}.sidebar .nav-link{font-weight:500;color:#333}.sidebar .nav-link .feather{margin-right:4px;color:#999}.sidebar .nav-link.active .feather,.sidebar .nav-link:hover .feather{color:inherit}.sidebar-heading{font-size:.75rem;text-transform:uppercase}[role=main]{padding-top:30px}.navbar-brand{padding-top:.75rem;padding-bottom:.75rem;font-size:1rem;background-color:rgba(0,0,0,.25);box-shadow:inset -1px 0 0 rgba(0,0,0,.25)}
@@ -225,10 +225,10 @@ while ($row = mysqli_fetch_array($result)) {
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- For icons -->
-    <script src="../node_modules/feather-icons/dist/feather.min.js"></script>
+    <script src="../../node_modules/feather-icons/dist/feather.min.js"></script>
     <script>
         feather.replace()
     </script>

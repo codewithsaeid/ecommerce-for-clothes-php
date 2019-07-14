@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <style>
     body {
@@ -176,7 +176,7 @@
                         <tbody>
 
                             <?php include('../inc/connection.php');
-                            $product_data = mysqli_query($connect, "SELECT * FROM add_product WHERE p_category='Women'");
+                            $product_data = mysqli_query($connect, "SELECT * FROM products");
                             // $id = $product_slice['pid'];
                             while ($product_slice = mysqli_fetch_array($product_data)) : 
                                 // $id = $product_slice['pid'];
@@ -185,7 +185,7 @@
                                 <tr>
                                     <th scope="row"><?php echo $product_slice['pid']; ?></th>
                                     <td><?php echo $product_slice['p_name']; ?></td>
-                                    
+                                   
                                     <td><?php echo $product_slice['p_category']; ?></td>
                                     <td><?php echo $product_slice['p_code']; ?></td>
                                     <td><?php echo $product_slice['p_price']; ?></td>
@@ -213,10 +213,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- For icons -->
-    <script src="../node_modules/feather-icons/dist/feather.min.js"></script>
+    <script src="../../node_modules/feather-icons/dist/feather.min.js"></script>
     <script>
         feather.replace()
     </script>
