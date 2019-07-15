@@ -15,9 +15,9 @@ $admin_data = mysqli_num_rows($admin_select);
 // $admin_fatch = mysqli_fatch_array($admin_data)
 
 if($admin_data == 1){
-    // header('location: ../pages/home.php');
+    header('location: ../pages/home.php');
     echo 'OK';
 }elseif($admin_data == 0){
     echo "Something Worng";
-    // header('location: ../index.php?result=somethingwrong');
+    header('location: ../index.php?result=somethingwrong');
 }

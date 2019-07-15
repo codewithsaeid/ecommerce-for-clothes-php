@@ -21,6 +21,10 @@
         vertical-align: text-bottom;
     }
 
+    /*
+ * Sidebar
+ */
+
     .sidebar {
         position: fixed;
         top: 0;
@@ -68,11 +72,18 @@
         text-transform: uppercase;
     }
 
+    /*
+ * Content
+ */
+
     [role="main"] {
         padding-top: 48px;
-   
+        /* Space for fixed navbar */
     }
 
+    /*
+ * Navbar
+ */
 
     .navbar-brand {
         padding-top: .75rem;
@@ -96,12 +107,12 @@
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="./order.php">
                                 <span data-feather="file"></span>
                                 Orders
                             </a>
-                        </li> -->
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./allproduct.php">
                                 <span data-feather="shopping-cart"></span>
@@ -125,7 +136,9 @@
 
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>Categories</span>
-                    
+                        <!-- <a class="d-flex align-items-center text-muted" href="#">
+                            <span data-feather="plus-circle"></span>
+                        </a> -->
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
@@ -156,9 +169,6 @@
                 </div>
             </nav>
 
-          
-        <!-- </div> -->
-
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <!-- <h2>Section title</h2> -->
                 <div class="table-responsive">
@@ -179,9 +189,9 @@
 
                             <?php include('../inc/connection.php');
                             $product_data = mysqli_query($connect, "SELECT * FROM products WHERE p_category='Women'");
-                           
+                            // $id = $product_slice['pid'];
                             while ($product_slice = mysqli_fetch_array($product_data)) : 
-                               
+                                // $id = $product_slice['pid'];
                             ?>
                             
                                 <tr>

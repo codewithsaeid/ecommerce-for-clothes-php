@@ -23,6 +23,7 @@
     html {
         height: 100%
     }
+    .feather{width:16px;height:16px;vertical-align:text-bottom}
 
     body {
         display: -ms-flexbox;
@@ -88,6 +89,7 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
         <div class="container">
             <p class="mt-5 mb-3 text-muted">You already have account? <a href="./signin.php">Sign Here</a></p>
+            <p class="mt-5 mb-3 text-muted"><a href="../index.php">Go to home<span data-feather="arrow-right"></span></a></p>
             <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
         </div>
     </form>
@@ -95,6 +97,11 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../node_modules/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
 
 </body>
 

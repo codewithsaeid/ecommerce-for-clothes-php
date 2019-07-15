@@ -1,13 +1,13 @@
 <?php
 if (isset($_GET['result'])) {
-  if ($_GET['result'] == 'productnotadd') {
-    echo '<div class="alert alert-danger" style="margin-bottom:0px;text-align:center;">
+    if ($_GET['result'] == 'productnotadd') {
+        echo '<div class="alert alert-danger" style="margin-bottom:0px;text-align:center;">
       <strong>Something Worng ! </strong> Product is not added.</div>';
-  }
-  if ($_GET['result'] == 'addproduct') {
-    echo '<div class="alert alert-success" style="margin-bottom:0px;text-align:center;">
+    }
+    if ($_GET['result'] == 'addproduct') {
+        echo '<div class="alert alert-success" style="margin-bottom:0px;text-align:center;">
       <strong>Sussesfully added</strong></div>';
-  }
+    }
 }
 ?>
 
@@ -113,7 +113,6 @@ if (isset($_GET['result'])) {
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar text-white">
                 <div class="sidebar-sticky">
-
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="./home.php">
@@ -121,50 +120,62 @@ if (isset($_GET['result'])) {
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="./order.php">
                                 <span data-feather="file"></span>
                                 Orders
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./allproduct.php">
                                 <span data-feather="shopping-cart"></span>
                                 <i class="fe fe-heart"></i> Products
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./customers.php">
                                 <span data-feather="users"></span>
                                 Customers
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./addproduct.php">
                                 <span data-feather="layers"></span>
-                                Integrations
+                                Add product
                             </a>
                         </li>
                     </ul>
 
-                    <h6
-                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
-                        <a class="d-flex align-items-center text-muted" href="#">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Categories</span>
+                        <!-- <a class="d-flex align-items-center text-muted" href="#">
                             <span data-feather="plus-circle"></span>
-                        </a>
+                        </a> -->
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#nav">
+                            <a class="nav-link" href="./mans.php">
                                 <span data-feather="file-text"></span>
-                                Current month
+                                Men
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="womens.php">
+                                <span data-feather="file-text"></span>
+                                Women
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kids.php">
+                                <span data-feather="file-text"></span>
+                                Kids
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="accessories.php">
+                                <span data-feather="file-text"></span>
+                                Accessories
                             </a>
                         </li>
                     </ul>
@@ -172,32 +183,44 @@ if (isset($_GET['result'])) {
             </nav>
 
             <!-- content area start -->
+            <?php
+
+            include('../inc/connection.php');
+
+            $id = $_GET['epid'];
+            $product_data = mysqli_query($connect, "SELECT * FROM products WHERE pid = $id");
+            $product_slice = mysqli_fetch_array($product_data);
+            ?>
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-5">
-           <div class="container">
-           <form action="../inc/editproduct.php" method="POST" enctype="multipart/form-data">
-           <input type="hidden" name="userid" value="<?php echo $id = $_GET['epid']; ?>">
-          <select id="inputState" class="form-control mb-3" name="pcategory">
-            <option selected>Category...</option>
-            <option value="men">Men</option>
-            <option value="women">Women</option>
-            <option value="kids">Kids</option>
-            <option value="accessories">Accessories</option>
-          </select>
+                <div class="container">
+                    <form action="../inc/editproduct.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="userid" value="<?php echo $id = $_GET['epid']; ?>">
+                        <select id="inputState" class="form-control" name="pcategory" value="this">
+                            <option selected><?php echo $product_slice['p_category']; ?></option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                            <option value="kids">Kids</option>
+                            <option value="accessories">Accessories</option>
+                        </select>
+                        <small id="emailHelp" class="form-text text-muted mb-4">Update product category</small>
 
 
-          <input type="pname" name="pname" class="form-control mb-3" placeholder="Enter Product Name">
-          <input type="pcode" name="pcode" class="form-control mb-3" placeholder="Enter Product Code" >
+                        <input type="pname" name="pname" class="form-control" value="<?php echo $product_slice['p_name']; ?>" placeholder="Enter Product Name">
+                        <small id="emailHelp" class="form-text text-muted mb-4">Update product name</small>
+                        <input type="pcode" name="pcode" class="form-control" placeholder="Enter Product Code" value="<?php echo $product_slice['p_code']; ?>">
+                        <small id="emailHelp" class="form-text text-muted mb-4">Update product code</small>
 
-          <input type="pprice" name="pprice" class="form-control mb-3" placeholder="Enter Product Price" >
+                        <input type="pprice" name="pprice" class="form-control" placeholder="Enter Product Price" value="<?php echo $product_slice['p_price']; ?>">
+                        <small id="emailHelp" class="form-text text-muted mb-4">Upload product price</small>
 
 
-          <input type="file" name="pimg" class="form-control-file mb-1" >
-          <small id="emailHelp" class="form-text text-muted mb-4">Upload Product Image</small>
+                        <input type="file" name="pimg" class="form-control-file mb-1">
+                        <small id="emailHelp" class="form-text text-muted mb-4">Update product image</small>
 
 
-          <button class="btn btn-primary btn-block" type="submit">Add Product</button>
-        </form>
-           </div>
+                        <button class="btn btn-primary btn-block" type="submit">Update Product</button>
+                    </form>
+                </div>
 
             </main>
         </div>
@@ -214,6 +237,7 @@ if (isset($_GET['result'])) {
         feather.replace()
     </script>
     <!-- / -->
+
 
 </body>
 

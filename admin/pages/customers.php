@@ -131,7 +131,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./mans.php">
                                 <span data-feather="file-text"></span>
-                                Man
+                                Men
                             </a>
                         </li>
                         <li class="nav-item">
@@ -160,54 +160,8 @@
         <!-- </div> -->
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <!-- <h2>Section title</h2> -->
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th>#ID</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Code</th>
-                                <th>Price</th>
-                                <th>Image</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php include('../inc/connection.php');
-                            $product_data = mysqli_query($connect, "SELECT * FROM products WHERE p_category='Women'");
-                           
-                            while ($product_slice = mysqli_fetch_array($product_data)) : 
-                               
-                            ?>
-                            
-                                <tr>
-                                    <th scope="row"><?php echo $product_slice['pid']; ?></th>
-                                    <td><?php echo $product_slice['p_name']; ?></td>
-                                    
-                                    <td><?php echo $product_slice['p_category']; ?></td>
-                                    <td><?php echo $product_slice['p_code']; ?></td>
-                                    <td><?php echo $product_slice['p_price']; ?></td>
-                                    <td><?php echo $product_slice['p_img']; ?></td>
-                                    <td>
-
-                                        <a href='./editproduct.php?epid=<?php echo $product_slice['pid']; ?>' class="btn btn-primary">Edit</a>
-
-                                    </td>
-                                    <td>
-
-                                    <a class="btn btn-danger" href='../inc/deleteproduct.php?id=<?php echo $product_slice['pid']; ?>'>Delete</a>
-
-                                    </td>
-                                </tr>
-
-                            <?php endwhile; ?>
-                        </tbody>
-                    </table>
-                </div>
+            <h5>This is customers list</h5>
+                
             </main>
         </div>
     </div>

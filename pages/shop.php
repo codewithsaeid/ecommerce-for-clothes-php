@@ -27,28 +27,26 @@
 
     <!-- navbar -->
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="../admin/images/ecom-store-logo.png" alt=""></h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="./admin/images/ecom-store-logo.png" alt=""></h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">HOME</a>
-            <a class="p-2 text-dark" href="#">SHOP</a>
-            <a class="p-2 text-dark" href="#">Support</a>
-            <a class="p-2 text-dark" href="#">Pricing</a>
+            <a class="p-2 text-dark" href="../index.php">HOME</a>
+            <a class="p-2 text-dark" href="./shop.php">SHOP</a>
+            <a class="p-2 text-dark" href="./contact.php">CONTACT US</a>
         </nav>
-        <a class="btn btn-outline-success mr-3" href="#">Sign in</a>
-        <a class="btn btn-outline-primary" href="#">Sign up</a>
+        <a class="btn btn-outline-success mr-3" href="./signin.php">Sign in</a>
+        <a class="btn btn-outline-primary" href="./signup.php">Sign up</a>
     </div>
-
 
 
     <div class="container">
         <!-- breadcrumb -->
-        <nav aria-label="breadcrumb bg-white">
+        <!-- <nav aria-label="breadcrumb bg-white">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Library</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Data</li>
             </ol>
-        </nav>
+        </nav> -->
         <div class="row">
             <div class="col-3">
                 <div class="list-group" id="list-tab" role="tablist">

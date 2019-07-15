@@ -1,9 +1,9 @@
 <?php
 include '../inc/connection.php';
 // All User
-$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM products");
+$result = mysqli_query($connect, "SELECT  COUNT(*) as id FROM user_info");
 while ($row = mysqli_fetch_array($result)) {
-    $activeorders = $row['id'];
+    $totaluser = $row['id'];
     // echo "There are currently " .$activeorders. " users.";
 }
 
@@ -75,35 +75,29 @@ while ($row = mysqli_fetch_array($result)) {
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="./order.php">
                                 <span data-feather="file"></span>
                                 Orders
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./allproduct.php">
                                 <span data-feather="shopping-cart"></span>
                                 <i class="fe fe-heart"></i> Products
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./customers.php">
                                 <span data-feather="users"></span>
                                 Customers
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./addproduct.php">
                                 <span data-feather="layers"></span>
                                 Add product
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
                             </a>
                         </li>
                     </ul>
@@ -116,25 +110,25 @@ while ($row = mysqli_fetch_array($result)) {
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#nav">
+                            <a class="nav-link" href="./mans.php">
                                 <span data-feather="file-text"></span>
                                 Men
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#nav">
+                            <a class="nav-link" href="womens.php">
                                 <span data-feather="file-text"></span>
                                 Women
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#nav">
+                            <a class="nav-link" href="kids.php">
                                 <span data-feather="file-text"></span>
                                 Kids
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#nav">
+                            <a class="nav-link" href="accessories.php">
                                 <span data-feather="file-text"></span>
                                 Accessories
                             </a>
@@ -152,7 +146,7 @@ while ($row = mysqli_fetch_array($result)) {
                             <h5><b>Total User</b></h5>
                         </div>
                         <div class="card-body">
-                            <h1> 100  <button type="button" class="btn btn-primary mt-2 float-right">Visit</button>
+                            <h1> <?php echo $totaluser; ?>  <button type="button" class="btn btn-primary mt-2 float-right">Visit</button>
                                 <h1>
                         </div>
                     </div>
@@ -165,7 +159,7 @@ while ($row = mysqli_fetch_array($result)) {
                                 <h1>
                         </div>
                     </div>
-                    <div class="card text-white bg-dark m-3 col-md-4">
+                    <!-- <div class="card text-white bg-dark m-3 col-md-4">
                         <div class="card-header">
                             <h5><b>Active orders</b></h5>
                         </div>
@@ -173,7 +167,7 @@ while ($row = mysqli_fetch_array($result)) {
                             <h1>25 <button type="button" class="btn btn-primary mt-2 float-right">Visit</button>
                                 <h1>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
 

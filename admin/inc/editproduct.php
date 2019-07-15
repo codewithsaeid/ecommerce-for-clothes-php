@@ -20,7 +20,7 @@ move_uploaded_file($product_img_tmp, '../images/product/' . $product_img_name);
 if ($pname && $pcode && $pcategory && $pprice) {
     $result = mysqli_query($connect, "UPDATE products SET p_name='$_POST[pname]', p_code='$_POST[pcode]', p_category='$_POST[pcategory]', p_price='$_POST[pprice]', p_img='$product_img_name' WHERE pid='$pid'");
     echo "ok";
-    // header("Location: editproduct.php?epid=".$epid."");
+    header("Location: ../pages/allproduct.php");
 
 } else {
     // header('location: ../pages/home.php?result=productnotadd');

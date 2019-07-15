@@ -1,11 +1,4 @@
-<?php
-if(isset($_GET['result'])){
-  if($_GET['result'] == 'somethingwrong'){
-    echo '<div class="alert alert-danger">
-      <strong>Something Worng ! </strong> Email Or pass do not match.</div>';
-  }
-}
-?>
+
 
 <!doctype html>
 <html lang="en">
@@ -23,6 +16,14 @@ body,html{height:100%}body{display:-ms-flexbox;display:flex;-ms-flex-align:cente
 </style>
 <body>
 <form class="form-signin" action="./inc/adminsignin.php" method="POST">
+<?php
+if(isset($_GET['result'])){
+  if($_GET['result'] == 'somethingwrong'){
+    echo '<div class="alert alert-danger">
+      <strong>Something Worng ! </strong> Email Or pass do not match.</div>';
+  }
+}
+?>
       <img class="mb-4" src="./images/ecom-store-logo.png" alt="">
       <h1 class="h3 mb-3 font-weight-normal"><b>Please sign in</b></h1>
       <label for="inputEmail" class="sr-only">Email address</label>

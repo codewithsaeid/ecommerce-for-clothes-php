@@ -111,9 +111,8 @@ if (isset($_GET['result'])) {
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar text-white">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar text-white">
                 <div class="sidebar-sticky">
-
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="./home.php">
@@ -121,50 +120,62 @@ if (isset($_GET['result'])) {
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="./order.php">
                                 <span data-feather="file"></span>
                                 Orders
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./allproduct.php">
                                 <span data-feather="shopping-cart"></span>
                                 <i class="fe fe-heart"></i> Products
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./customers.php">
                                 <span data-feather="users"></span>
                                 Customers
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./addproduct.php">
                                 <span data-feather="layers"></span>
-                                Integrations
+                                Add product
                             </a>
                         </li>
                     </ul>
 
-                    <h6
-                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
-                        <a class="d-flex align-items-center text-muted" href="#">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Categories</span>
+                        <!-- <a class="d-flex align-items-center text-muted" href="#">
                             <span data-feather="plus-circle"></span>
-                        </a>
+                        </a> -->
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#nav">
+                            <a class="nav-link" href="./mans.php">
                                 <span data-feather="file-text"></span>
-                                Current month
+                                Men
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="womens.php">
+                                <span data-feather="file-text"></span>
+                                Women
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kids.php">
+                                <span data-feather="file-text"></span>
+                                Kids
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="accessories.php">
+                                <span data-feather="file-text"></span>
+                                Accessories
                             </a>
                         </li>
                     </ul>
