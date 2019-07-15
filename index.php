@@ -33,7 +33,7 @@
          
 
             <?php include('./admin/inc/connection.php');
-            $product_data = mysqli_query($connect, "SELECT * FROM add_product");
+            $product_data = mysqli_query($connect, "SELECT * FROM products");
             while ($product_slice = mysqli_fetch_array($product_data)) : ?>
 
                 <div class="card m-3" style="width: 18rem;">
