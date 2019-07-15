@@ -1,10 +1,9 @@
 <?php
-// if(isset($_GET['result'])){
-//   if($_GET['result'] == 'somethingwrong'){
-//     echo '<div class="alert alert-danger">
-//       <strong>Something Worng ! </strong> Email Or pass do not match.</div>';
-//   }
-// }
+session_start();
+if (isset($_SESSION['user_email'])) {
+    header('location: ../index.php');
+};
+
 ?>
 
 <!doctype html>
@@ -23,7 +22,12 @@
     html {
         height: 100%
     }
-    .feather{width:16px;height:16px;vertical-align:text-bottom}
+
+    .feather {
+        width: 16px;
+        height: 16px;
+        vertical-align: text-bottom
+    }
 
     body {
         display: -ms-flexbox;
@@ -74,11 +78,18 @@
 
 <body>
     <form class="form-signin" action="../inc/usersignin.php" method="POST">
+        <?php
+        if (isset($_GET['result'])) {
+            if ($_GET['result'] == 'somethingwrong') {
+                echo '<div class="alert alert-danger">
+      <strong>Something Worng ! </strong> Email Or pass do not match.</div>';
+            }
+        }
+        ?>
         <img class="mb-4" src="../admin/images/ecom-store-logo.png" alt="">
         <h1 class="h3 mb-3 font-weight-normal"><b>Please sign in</b></h1>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" class="form-control" placeholder="Email address" name="email" required
-            autofocus>
+        <input type="email" class="form-control" placeholder="Email address" name="email" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" class="form-control" placeholder="Password" name="pass" required>
         <div class="checkbox mb-3">

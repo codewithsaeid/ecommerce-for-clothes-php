@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -22,14 +25,25 @@
             <a class="p-2 text-dark" href="./pages/shop.php">SHOP</a>
             <a class="p-2 text-dark" href="./pages/contact.php">CONTACT US</a>
         </nav>
-        <a class="btn btn-outline-success mr-3" href="./pages/signin.php">Sign in</a>
-        <a class="btn btn-outline-primary" href="./pages/signup.php">Sign up</a>
+<?php 
+
+if (!isset($_SESSION['uemail'])) {
+
+        echo '<a class="btn btn-outline-success mr-3" href="./pages/signin.php">Sign in</a>
+        <a class="btn btn-outline-primary" href="./pages/signup.php">Sign up</a>';
+}else{
+    echo '<button type="button" class="btn btn-outline-dark text-uppercase  mr-3">HI '.$_SESSION["uname"].'</button>';
+    echo '<a class="btn btn-outline-dark" href="./inc/logout.php">LOGOUT</a>';
+}
+
+?>
+       
     </div>
     <!-- product area -->
     <div class="container">
-    <h3 class="text-center">OUR LATEST COLLECTIONS</h3>
+        <h3 class="text-center">OUR LATEST COLLECTIONS</h3>
         <div class="row justify-content-around">
-         
+
 
             <?php include('./admin/inc/connection.php');
             $product_data = mysqli_query($connect, "SELECT * FROM products");

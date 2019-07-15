@@ -1,10 +1,8 @@
 <?php
-// if(isset($_GET['result'])){
-//   if($_GET['result'] == 'somethingwrong'){
-//     echo '<div class="alert alert-danger">
-//       <strong>Something Worng ! </strong> Email Or pass do not match.</div>';
-//   }
-// }
+session_start();
+if (isset($_SESSION['user_email'])) {
+    header('location: ../index.php');
+};
 ?>
 
 <!doctype html>
@@ -23,7 +21,12 @@
     html {
         height: 100%
     }
-    .feather{width:16px;height:16px;vertical-align:text-bottom}
+
+    .feather {
+        width: 16px;
+        height: 16px;
+        vertical-align: text-bottom
+    }
 
     body {
         display: -ms-flexbox;
@@ -75,6 +78,33 @@
 
 <body>
     <form class="form-signin" action="../inc/usersignup.php" method="POST">
+        <?php
+        if (isset($_GET['result'])) {
+            if ($_GET['result'] == 'sameemail') {
+                echo '<div class="alert alert-danger">
+      <strong>Something Worng ! </strong> This email already register.</div>';
+            }
+        }
+        if (isset($_GET['result'])) {
+            if ($_GET['result'] == 'successful') {
+                echo '<div class="alert alert-success">
+      <strong>Successfully register ! </strong> Login and enjoy</div>';
+            }
+        }
+        if (isset($_GET['result'])) {
+            if ($_GET['result'] == 'passdontmatch') {
+                echo '<div class="alert alert-danger">
+      <strong>Something Worng ! </strong> password does nt match</div>';
+            }
+        }
+        if (isset($_GET['result'])) {
+            if ($_GET['result'] == 'fieldempty') {
+                echo '<div class="alert alert-danger">
+      <strong>Something Worng ! </strong> Field are empty</div>';
+            }
+        }
+        ?>
+
         <img class="mb-4" src="../admin/images/ecom-store-logo.png" alt="">
         <h1 class="h3 mb-3 font-weight-normal"><b>Please sign up</b></h1>
         <input type="text" class="form-control" placeholder="Enter your name" name="name" required autofocus>

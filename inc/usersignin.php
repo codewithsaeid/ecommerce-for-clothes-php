@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include ('connection.php');
 
 echo $email = $_POST['email'];
@@ -7,16 +7,25 @@ echo $email = $_POST['email'];
 echo $pass = $_POST['pass'];
 
 
-$user_select = mysqli_query($connect, "SELECT * FROM user_info WHERE user_email = '$email' AND pass = '$pass'");
 
-$admin_data = mysqli_num_rows($user_select);
+// $user_select = mysqli_query($connect, "SELECT * FROM user_info WHERE user_email = '$email' AND pass = '$pass'");
 
-// $admin_fatch = mysqli_fatch_array($admin_data)
+// $user_data = mysqli_num_rows($user_select);
 
-if($admin_data == 1){
-    // header('location: ../pages/home.php');
+// $user_fatch = mysqli_fetch_array($user_data);
+
+$user_select = mysqli_query($connect, "SELECT * FROM user_info WHERE user_email='$email' AND pass='$pass'");
+$koytauser = mysqli_num_rows($user_select);
+$user_data = mysqli_fetch_array($user_select);
+
+
+echo $_SESSION['uname'] = $user_data['user_name'];
+echo $_SESSION['uemail'] = $user_data['user_email'];
+
+if($koytauser == 1){
+    header('location: ../index.php');
     echo 'OK';
-}elseif($admin_data == 0){
+}elseif($koytauser == 0){
     echo "Something Worng";
-    // header('location: ../index.php?result=somethingwrong');
+    header('location: ../pages/signin.php?result=somethingwrong');
 }

@@ -161,6 +161,40 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <h5>This is customers list</h5>
+            <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>#ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Password</th>
+    
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php include('../inc/connection.php');
+                            $product_data = mysqli_query($connect, "SELECT * FROM user_info");
+                            // $id = $product_slice['pid'];
+                            while ($product_slice = mysqli_fetch_array($product_data)) : 
+                                // $id = $product_slice['pid'];
+                            ?>
+                            
+                                <tr>
+                                    <th scope="row"><?php echo $product_slice['id']; ?></th>
+                                    <td><?php echo $product_slice['user_name']; ?></td>
+                                   
+                                    <td><?php echo $product_slice['user_email']; ?></td>
+                                   
+                                    <td><?php echo $product_slice['pass']; ?></td>
+                        
+                                </tr>
+
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
                 
             </main>
         </div>

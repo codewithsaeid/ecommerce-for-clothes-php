@@ -15,17 +15,17 @@ $how_many_user = mysqli_num_rows($email_select);
 if ($name && $pass && $email && $repass) {
     if ($pass == $repass) {  
             if ($how_many_user  >= 1) {
-                // header('location: ../index.php?result=sameemail');
-                // echo "Vai ai email diye registation kora ase onno email diye try koren";
+                header('location: ../pages/signup.php?result=sameemail');
+                echo "Vai ai email diye registation kora ase onno email diye try koren";
             } else {
                 mysqli_query($connect, "INSERT INTO user_info(user_name,user_email,pass)VALUES('$name','$email','$pass')");
-                // header('location: ../index.php?result=successful');
+                header('location: ../pages/signup.php?result=successful');
             }
       
     } else {
-        // echo "Pass duita mile nai";
-        // header('location: ../index.php?result=passdontmatch');
+        echo "Pass duita mile nai";
+        header('location: ../pages/signup.php?result=passdontmatch');
     }
 } else {
-    // header('location: ../index.php?result=fieldempty');
+    header('location: ../index.php?result=fieldempty');
 }

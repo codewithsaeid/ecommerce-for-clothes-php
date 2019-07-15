@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -21,20 +24,30 @@
 
     <!-- navbar -->
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="./admin/images/ecom-store-logo.png" alt=""></h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="../admin/images/ecom-store-logo.png" alt=""></h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="../index.php">HOME</a>
             <a class="p-2 text-dark" href="./shop.php">SHOP</a>
             <a class="p-2 text-dark" href="./contact.php">CONTACT US</a>
         </nav>
-        <a class="btn btn-outline-success mr-3" href="./signin.php">Sign in</a>
-        <a class="btn btn-outline-primary" href="./signup.php">Sign up</a>
+        <?php
+
+        if (!isset($_SESSION['uemail'])) {
+
+            echo '<a class="btn btn-outline-success mr-3" href="./pages/signin.php">Sign in</a>
+        <a class="btn btn-outline-primary" href="./pages/signup.php">Sign up</a>';
+        } else {
+            echo '<button type="button" class="btn btn-outline-dark text-uppercase  mr-3">HI ' . $_SESSION["uname"] . '</button>';
+            echo '<a class="btn btn-outline-dark" href="./inc/logout.php">LOGOUT</a>';
+        }
+
+        ?>
     </div>
 
     <h3 style="text-align:center;">This is contact page</h3>
 
 
-   
+
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top container">
         <div class="row">
