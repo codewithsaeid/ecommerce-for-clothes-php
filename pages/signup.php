@@ -118,7 +118,7 @@ if (isset($_SESSION['user_email'])) {
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
         <div class="container">
-            <p class="mt-5 mb-3 text-muted">You already have account? <a href="./signin.php">Sign Here</a></p>
+            <p class="mt-5 mb-3 text-muted">You already have account? <a href="./signin.php"> Signin Here</a></p>
             <p class="mt-5 mb-3 text-muted"><a href="../index.php">Go to home<span data-feather="arrow-right"></span></a></p>
             <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
         </div>

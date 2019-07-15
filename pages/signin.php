@@ -99,7 +99,7 @@ if (isset($_SESSION['user_email'])) {
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <div class="container">
-            <p class="mt-5 mb-3 text-muted">Don't have account?<a href="./signup.php">Signin Here</a></p>
+            <p class="mt-5 mb-3 text-muted">Don't have account?<a href="./signup.php">Signup Here</a></p>
             <p class="mt-5 mb-3 text-muted"><a href="../index.php">Go to home<span data-feather="arrow-right"></span></a></p>
             <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
         </div>
